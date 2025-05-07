@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Bangers&family=Bebas+Neue&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Bangers&family=Bebas+Neue&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 <body>
     <nav class="navbar">
@@ -63,9 +64,47 @@
         </section>
         <section class="gallery-section">
             <div class="gallery-container">
-                <h2>Our Space</h2>
-                <div class="image-slider">
-                    <!-- Slider content will go here -->
+                <h2>Take a look around!</h2>
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                        <!-- Slides will go here -->
+                        <div class="swiper-slide">
+                            <img src="img/keefer_imgs/sun_room.jpeg" alt="sun room">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/keefer_imgs/back_deck_two.jpg" alt="Back deck">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/keefer_imgs/back_deck.jpeg" alt="Back deck">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/keefer_imgs/exterior_and_parking_lot.jpeg" alt="front view">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/keefer_imgs/fireplace.jpeg" alt="fireplace">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/keefer_imgs/pool_room.jpeg" alt="pool room">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/keefer_imgs/fireplace.jpeg" alt="fireplace">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/keefer_imgs/sign.jpeg" alt="sign">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/keefer_imgs/hummingbird_painting.jpeg" alt="hummingbird painting">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/keefer_imgs/sunken_dining_room.jpg" alt="sunken dining room">
+                        </div>
+                        <!-- Add more slides as needed -->
+                    </div>
+                    <!-- Add navigation buttons -->
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <!-- Add pagination -->
+                    <div class="swiper-pagination"></div>
                 </div>
             </div>
         </section>
@@ -75,6 +114,7 @@
         <p>&copy; 2024 My Website. All rights reserved.</p>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html> 

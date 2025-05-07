@@ -140,6 +140,13 @@ body {
     font-weight: 900;
     font-style: italic;
   }
+
+  .satisfy-regular {
+    font-family: "Satisfy", cursive;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
   
 
 /* Navigation Bar Styles */
@@ -391,8 +398,8 @@ body {
 }
 
 .gallery-section {
-    padding: 4rem 0;
-    background-color: #f8f9fa;
+    padding: 1rem 0;
+    background-color: rgba(0, 0, 0, 0.819);
 }
 
 .gallery-container {
@@ -403,16 +410,48 @@ body {
 
 .gallery-container h2 {
     text-align: center;
-    margin-bottom: 2rem;
-    font-family: 'IM Fell Double Pica', serif;
-    font-size: 2.5rem;
-    color: #333;
+    margin-bottom: 1rem;
+    font-family: "Satisfy", cursive;
+    font-size: 3.5rem;
+    color: rgb(160, 244, 255);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    display: inline-block;
+    margin-left: 50%;
+    transform: translateX(-50%);
 }
 
-.image-slider {
+.swiper {
     width: 100%;
-    height: 500px;
-    background-color: #fff;
+    height: 700px;
     border-radius: 8px;
     overflow: hidden;
+}
+
+.swiper-slide {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: #980156;
+}
+
+.swiper-pagination-bullet-active {
+    background: #980156;
 } 
+
+footer {
+    background-color: #980156;
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+}
