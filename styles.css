@@ -428,15 +428,11 @@ body.menu-page .hero-content {
 }
 
 .scroll-indicator {
-    position: absolute;
-    bottom: 40px;
-    left: 50%;
-    transform: translateX(-50%);
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    z-index: 2;
+    margin-top: 2rem;
 }
 
 .scroll-indicator p {
@@ -1142,6 +1138,18 @@ footer {
     .bus-about-right-column {
         display: none;
     }
+
+    .scroll-indicator {
+        margin-top: 1.5rem;
+    }
+
+    .scroll-indicator p {
+        font-size: 0.9rem;
+    }
+
+    .chevron-down {
+        width: 40px;
+    }
 }
 
 /* Mobile menu icon - hidden by default */
@@ -1173,4 +1181,27 @@ footer {
 .mobile-menu.active {
     opacity: 1;
     visibility: visible;
+}
+
+@media screen and (max-width: 1240px) {
+    .bus-about-right-column {
+        display: none !important;
+    }
+
+    .bus-about-left-column {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .bus-about-content-wrapper {
+        width: 100%;
+        padding: 0;
+        margin-top: 3.5rem;
+    }
+
+    .pub-bus {
+        display: none !important;
+    }
 }
