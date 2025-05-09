@@ -1,4 +1,43 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Mobile menu functionality
+    const mobileMenuIcon = document.querySelector('.mobile-menu-icon');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const mobileMenuContainer = document.querySelector('.menu-sections');
+    const mobileMenuBtns = document.querySelectorAll('.mobile-menu-btn');
+    const mobileMenuSections = document.querySelectorAll('.menu-section');
+
+    if (mobileMenuIcon && mobileMenu) {
+        mobileMenuIcon.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            console.log('Menu icon clicked'); // Debug log
+            mobileMenu.classList.toggle('active');
+            mobileMenuIcon.classList.toggle('rotated');
+        });
+    }
+
+    // Handle menu button clicks
+    mobileMenuBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            // Remove active class from all buttons
+            mobileMenuBtns.forEach(b => b.classList.remove('active'));
+            // Add active class to clicked button
+            this.classList.add('active');
+
+            // Hide all menu sections
+            mobileMenuSections.forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Show the corresponding menu section
+            const targetId = this.getAttribute('data-target');
+            const targetSection = document.getElementById(targetId);
+            if (targetSection) {
+                targetSection.classList.add('active');
+            }
+        });
+    });
+
     // Navbar scroll effect
     const navbar = document.querySelector('.navbar');
     
@@ -63,17 +102,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Menu section switching
     const menuButtons = document.querySelectorAll('.menu-btn');
-    const menuSections = document.querySelectorAll('.menu-section');
+    const desktopMenuSections = document.querySelectorAll('.menu-section');
 
     menuButtons.forEach((button, index) => {
         button.addEventListener('click', () => {
             // Remove active class from all sections and buttons
-            menuSections.forEach(section => section.classList.remove('active'));
+            desktopMenuSections.forEach(section => section.classList.remove('active'));
             menuButtons.forEach(btn => btn.classList.remove('active'));
             
             // Add active class to clicked button and corresponding section
             button.classList.add('active');
-            menuSections[index].classList.add('active');
+            desktopMenuSections[index].classList.add('active');
         });
     });
 
@@ -90,26 +129,28 @@ document.addEventListener('DOMContentLoaded', function() {
     // Switch grids every 5 seconds
     setInterval(switchGrid, 5000);
 
-    // Initialize Swiper
-    const swiper = new Swiper('.swiper', {
-        // Optional parameters
-        direction: 'horizontal',
-        loop: true,
-        autoplay: {
-            delay: 5000,
-            disableOnInteraction: false,
-        },
-        
-        // Navigation arrows
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-        
-        // Pagination
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        },
-    });
+    // Initialize Swiper only if it exists
+    if (typeof Swiper !== 'undefined') {
+        const swiper = new Swiper('.swiper', {
+            // Optional parameters
+            direction: 'horizontal',
+            loop: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            
+            // Navigation arrows
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            
+            // Pagination
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+        });
+    }
 }); 

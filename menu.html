@@ -26,6 +26,7 @@
     </nav>
 
     <header class="hero">
+        <img src="img/noun-menu-3835642-FFFFFF.png" alt="Menu" class="mobile-menu-icon">
         <div class="menu-content">
             <div class="menu-container">
                 <nav class="menu-nav">
@@ -42,14 +43,14 @@
                         <div class="menu-item">
                             <div class="item-info">
                                 <p class="item-name">Nachos</p>
-                                <p class="item-description">Fresh corn chips topped with jack, cheddar, green onion and tomato with sour cream and salsa. <br> Jalepenos and black olives are optional.</p>
+                                <p class="item-description">Fresh corn chips topped with jack, cheddar, green onion and tomato with sour cream and salsa.</p>
                             </div>
                             <div class="price-container">
                                 <p class="item-price">Full: $23</p>
                                 <p class="item-price">Half: $18</p>
-                                <p class="item-price">Add Guac: $3</p>
-                                <p class="item-price">Add Jalapenos: $2</p>
-                                <p class="item-price">Add Black Olives: $2</p>
+                                <p class="item-price">Guac: $3</p>
+                                <p class="item-price">Jalapenos: $2</p>
+                                <p class="item-price">Black Olives: $2</p>
                             </div>
                         </div>
                         <div class="menu-item">
@@ -377,12 +378,26 @@
             </div>
         </div>
     </header>
-    <footer>
-        <p>THE HUMMINGBIRD PUB</p>
-        <p>47 Sturdies Bay Rd</p>
-        <p>Galiano Island, BC, V0N 1P0</p>
-        <p>Phone: 250-539-5472</p>
-    </footer>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <ul class="mobile-menu-links">
+            <li><button class="mobile-menu-btn" data-target="pan-pizza">Pan Pizza</button></li>
+            <li><button class="mobile-menu-btn" data-target="hand-helds">Hand-Helds</button></li>
+            <li><button class="mobile-menu-btn" data-target="sides">Sides</button></li>
+            <li><button class="mobile-menu-btn" data-target="desserts">Desserts</button></li>
+            <li><button class="mobile-menu-btn" data-target="drinks">Drinks</button></li>
+        </ul>
+    </div>
+
+    <main>
+        <footer>
+            <p>THE HUMMINGBIRD PUB</p>
+            <p>47 Sturdies Bay Rd</p>
+            <p>Galiano Island, BC, V0N 1P0</p>
+            <p>Phone: 250-539-5472</p>
+        </footer>
+    </main>
 
     <script src="script.js"></script>
 </body>
