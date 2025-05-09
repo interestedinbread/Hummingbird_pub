@@ -264,6 +264,7 @@ body.menu-page .hero-content {
     height: 80vh;
     display: flex;
     align-items: center;
+    margin-top: 60px;
 }
 
 .menu-container {
@@ -275,7 +276,6 @@ body.menu-page .hero-content {
     overflow-y: auto;
     scrollbar-width: none;  /* Firefox */
     -ms-overflow-style: none;  /* IE and Edge */
-    margin-top: 60px;
 }
 
 .menu-container::-webkit-scrollbar {
@@ -519,6 +519,7 @@ footer p {
     padding: 1rem;
     position: relative;
     z-index: 2;
+    margin-top: 60px;
 }
 
 .grid-wrapper {
@@ -590,7 +591,7 @@ footer p {
     width: 90%;
     margin-left: auto;
     margin-right: auto;
-    display: none;
+    display: flex;
 }
 
 .menu-nav-links {
@@ -599,6 +600,7 @@ footer p {
     list-style: none;
     padding: 0;
     margin: 0;
+    width: 100%;
 }
 
 .menu-btn {
@@ -800,28 +802,28 @@ footer p {
     max-width: 700px;
     background-color: rgba(0, 0, 0, 0.7);
     color: white;
-    padding: 2rem;
-    padding-bottom: 1rem;
+    padding: 0.75rem;
+    padding-bottom: 0.5rem;
     border-radius: 8px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1.5rem;
-}
-
-.bus-schedule-container p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    margin: 0;
-    text-align: left;
-    color: white;
+    gap: 0.5rem;
 }
 
 .bus-schedule-container .schedule-title {
     font-size: 1.3rem;
     font-weight: 600;
     text-align: center;
-    margin: 0 0 0.5rem 0;
+    margin: 0 0 0.1rem 0;
+    color: white;
+}
+
+.bus-schedule-container .schedule-title + p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin: 0 0 0.35rem 0;
+    text-align: left;
     color: white;
 }
 
@@ -880,19 +882,21 @@ footer p {
     }
 
     .menu-container {
-        margin-top: 60px;
+        margin-top: 15px;
+        height: 95%;
+        padding-bottom: 1rem;
     }
 
     .menu-nav {
-        display: none;
+        display: none !important;
     }
 
     .mobile-menu-icon {
-        display: block;
+        display: block !important;
         width: 30px;
         height: 30px;
         position: absolute;
-        top: 95px;
+        top: 120px;
         left: 85px;
         z-index: 1001;
         cursor: pointer;
@@ -916,18 +920,21 @@ footer p {
     .mobile-menu {
         position: fixed;
         top: 0;
-        left: -100%;
+        left: 0;
         width: 100%;
         height: 100vh;
         background-color: rgba(0, 0, 0, 0.9);
         z-index: 1000;
-        transition: left 0.3s ease;
         padding-top: 25vh;
         overflow-y: auto;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
     }
 
     .mobile-menu.active {
-        left: 0;
+        opacity: 1;
+        visibility: visible;
     }
 
     .mobile-menu-links {
@@ -972,6 +979,10 @@ footer p {
 
     .hero h2 {
         font-size: 2rem;
+    }
+
+    .hero-content h2 {
+        display: none;
     }
 
     .cta-button {
@@ -1025,4 +1036,75 @@ footer p {
         font-size: 0.9rem;
         margin-left: 1rem;
     }
+
+    .item-price {
+        font-size: 0.8rem;
+    }
+
+    .item-description {
+        font-size: 0.8rem;
+    }
+
+    .menu-section-description {
+        font-size: 0.8rem;
+    }
+
+    .bus-about-text-container p {
+        font-size: 0.8rem;
+    }
+
+    .bus-schedule-container p {
+        font-size: 0.8rem;
+    }
+
+    .bus-schedule-container .schedule-title {
+        font-size: 1rem;
+    }
+
+    .schedule-table th {
+        font-size: 0.8rem;
+    }
+
+    .schedule-table td {
+        font-size: 0.75rem;
+    }
+
+    .info-section h2 {
+        display: none;
+    }
+
+    .bus-schedule-container .schedule-title + p {
+        font-size: 0.8rem;
+    }
+}
+
+/* Mobile menu icon - hidden by default */
+.mobile-menu-icon {
+    display: none;
+}
+
+/* Mobile menu icon rotation */
+.mobile-menu-icon.rotated {
+    transform: rotate(180deg);
+}
+
+/* Mobile menu - hidden by default */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    padding-top: 25vh;
+    overflow-y: auto;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.mobile-menu.active {
+    opacity: 1;
+    visibility: visible;
 }

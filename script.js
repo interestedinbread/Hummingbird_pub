@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Handle menu button clicks
+    // Handle mobile menu button clicks
     mobileMenuBtns.forEach(btn => {
         btn.addEventListener('click', function() {
             // Remove active class from all buttons
@@ -35,6 +35,10 @@ document.addEventListener('DOMContentLoaded', function() {
             if (targetSection) {
                 targetSection.classList.add('active');
             }
+
+            // Close the mobile menu
+            mobileMenu.classList.remove('active');
+            mobileMenuIcon.classList.remove('rotated');
         });
     });
 
