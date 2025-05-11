@@ -1230,3 +1230,38 @@ footer {
     align-items: center;
     justify-content: center;
 }
+
+@media screen and (max-width: 885px) {
+    .about-content-wrapper {
+        flex-direction: column;
+        padding: 1rem 0;
+    }
+
+    .about-left-column {
+        width: 100%;
+    }
+
+    .about-right-column {
+        width: 100%;
+    }
+
+    .about-text-container,
+    .hours-container {
+        padding: 1.5rem;
+    }
+
+    .pub-sign {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 1150px) {
+    .menu-grid-container {
+        display: none;
+    }
+
+    .menu-content {
+        width: 100%;
+    }
+}
