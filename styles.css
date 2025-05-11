@@ -1161,11 +1161,6 @@ footer {
     display: none;
 }
 
-/* Mobile menu icon rotation */
-.mobile-menu-icon.rotated {
-    transform: rotate(180deg);
-}
-
 /* Mobile menu - hidden by default */
 .mobile-menu {
     position: fixed;
@@ -1185,6 +1180,44 @@ footer {
 .mobile-menu.active {
     opacity: 1;
     visibility: visible;
+}
+
+@media screen and (max-width: 800px) {
+    .menu-nav {
+        display: none !important;
+    }
+
+    .mobile-menu-icon {
+        display: block !important;
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        top: 120px;
+        left: 85px;
+        z-index: 1001;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }
+
+    .mobile-menu-icon.rotated {
+        transform: rotate(180deg);
+    }
+
+    .menu-sections {
+        padding-top: 60px;
+        margin-top: 25px;
+    }
+
+    .menu-section .menu-item:first-child {
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        padding-top: 1.5rem;
+    }
+}
+
+@media screen and (min-width: 481px) and (max-width: 800px) {
+    .mobile-menu-icon {
+        top: 135px;
+    }
 }
 
 @media screen and (max-width: 1240px) {
