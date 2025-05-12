@@ -521,6 +521,27 @@ footer {
     padding: 0;
 }
 
+.social-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+    margin-left: auto;
+    padding-right: 0.5rem;
+    height: 100%;
+    justify-content: center;
+}
+
+.social-icons i {
+    font-size: 2.5rem;
+    color: white;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .menu-grid-container {
     width: 40%;
     height: 80vh;
@@ -1049,27 +1070,6 @@ footer {
         margin-left: 0;
     }
 
-    .social-icons {
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-        align-items: center;
-        margin-left: auto;
-        padding-right: 0.5rem;
-        height: 100%;
-        justify-content: center;
-    }
-
-    .social-icons i {
-        font-size: 2.5rem;
-        color: white;
-        width: 50px;
-        height: 50px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
     .item-price {
         font-size: 0.8rem;
     }
@@ -1273,27 +1273,6 @@ footer {
     .pub-bus {
         display: none !important;
     }
-}
-
-.social-icons {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    align-items: center;
-    margin-left: auto;
-    padding-right: 0.5rem;
-    height: 100%;
-    justify-content: center;
-}
-
-.social-icons i {
-    font-size: 2.5rem;
-    color: white;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 @media screen and (max-width: 885px) {
