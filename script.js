@@ -124,14 +124,17 @@ document.addEventListener('DOMContentLoaded', function() {
     const grids = document.querySelectorAll('.menu-grid');
     let currentGrid = 0;
 
-    function switchGrid() {
-        grids[currentGrid].classList.remove('active');
-        currentGrid = (currentGrid + 1) % grids.length;
-        grids[currentGrid].classList.add('active');
-    }
+    // Only run grid switching on menu page
+    if (grids.length > 0) {
+        function switchGrid() {
+            grids[currentGrid].classList.remove('active');
+            currentGrid = (currentGrid + 1) % grids.length;
+            grids[currentGrid].classList.add('active');
+        }
 
-    // Switch grids every 5 seconds
-    setInterval(switchGrid, 5000);
+        // Switch grids every 5 seconds
+        setInterval(switchGrid, 5000);
+    }
 
     // Initialize Swiper only if it exists
     if (typeof Swiper !== 'undefined') {
