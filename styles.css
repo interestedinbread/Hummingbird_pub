@@ -420,7 +420,6 @@ body.menu-page .hero-content {
 .pub-sign {
     width: 100%;
     height: 100%;
-    min-width: 400px;
     min-height: 600px;
     object-fit: cover;
     border-radius: 8px;
@@ -1306,5 +1305,62 @@ footer {
 
     .menu-content {
         width: 100%;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .about-content-wrapper {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        gap: 2rem;
+    }
+
+    .about-text-container {
+        width: 100%;
+        min-height: auto;
+    }
+
+    .hours-container {
+        width: 100%;
+        min-height: auto;
+    }
+
+    .about-right-column {
+        width: 100%;
+        min-height: auto;
+        margin-top: 2rem;
+    }
+
+    .pub-sign {
+        width: 100%;
+        max-width: 600px;
+        max-height: 600px;
+        min-height: auto;
+        height: auto;
+    }
+}
+
+@media screen and (min-width: 701px) and (max-width: 1200px) {
+    .pub-sign {
+        object-fit: contain;
+        max-height: 700px;
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .about-content-wrapper {
+        width: 95%;
+    }
+
+    .about-text-container,
+    .hours-container {
+        padding: 1.5rem;
+    }
+
+    .pub-sign {
+        max-height: 400px;
     }
 }
