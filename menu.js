@@ -7,6 +7,15 @@ document.addEventListener('DOMContentLoaded', function() {
     const mobileMenuIcon = document.querySelector('.mobile-menu-icon');
     const menuGrids = document.querySelectorAll('.menu-grid');
 
+    const menuImgs = {
+        "starters": ["img/New_hummingbird_food_pics/breakfast_hash.jpg", 'img/New_hummingbird_food_pics/burger_1.jpg', 'img/New_hummingbird_food_pics/burger_2.jpg'],
+        "soups-and-salads": ['img/New_hummingbird_food_pics/wrap.jpg', 'img/New_hummingbird_food_pics/eggs_benedict.jpg', 'img/New_hummingbird_food_pics/chicken_tenders.jpg'],
+        "pub-grub": ['img/New_hummingbird_food_pics/shrimp salad.jpg', 'img/New_hummingbird_food_pics/burger_3.jpg', 'img/New_hummingbird_food_pics/eggs_benedict.jpg'],
+        "pan-pizza": ['img/New_hummingbird_food_pics/chicken_tenders.jpg', 'img/New_hummingbird_food_pics/Nachos.jpg', 'img/New_hummingbird_food_pics/breakfast_hash.jpg'],
+        "specialty-burgers": ['img/New_hummingbird_food_pics/wrap.jpg', 'img/New_hummingbird_food_pics/eggs_benedict.jpg', 'img/New_hummingbird_food_pics/chicken_tenders.jpg'],
+        "hand-helds": ['img/New_hummingbird_food_pics/wrap.jpg', 'img/New_hummingbird_food_pics/eggs_benedict.jpg', 'img/New_hummingbird_food_pics/chicken_tenders.jpg'],
+    }
+
     // Function to handle menu section switching
     function switchMenuSection(sectionId) {
         menuSections.forEach(section => {

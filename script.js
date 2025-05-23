@@ -104,42 +104,122 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Menu section switching
-    const menuButtons = document.querySelectorAll('.menu-btn');
-    const desktopMenuSections = document.querySelectorAll('.menu-section');
+    // Menu navigation functionality
+    const menuBtns = document.querySelectorAll('.menu-btn');
+    const menuSections = document.querySelectorAll('.menu-section');
+    const gridWrapper = document.querySelector('.grid-wrapper');
 
-    menuButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            // Remove active class from all sections and buttons
-            desktopMenuSections.forEach(section => section.classList.remove('active'));
-            menuButtons.forEach(btn => btn.classList.remove('active'));
+    const menuImgs = {
+        "starters": ["img/New_hummingbird_food_pics/breakfast_hash.jpg", 'img/New_hummingbird_food_pics/burger_1.jpg', 'img/New_hummingbird_food_pics/burger_2.jpg'],
+        "soups-and-salads": ['img/New_hummingbird_food_pics/wrap.jpg', 'img/New_hummingbird_food_pics/eggs_benedict.jpg', 'img/New_hummingbird_food_pics/chicken_tenders.jpg'],
+        "pub-grub": ['img/New_hummingbird_food_pics/shrimp salad.jpg', 'img/New_hummingbird_food_pics/burger_3.jpg', 'img/New_hummingbird_food_pics/eggs_benedict.jpg'],
+        "pan-pizza": ['img/New_hummingbird_food_pics/chicken_tenders.jpg', 'img/New_hummingbird_food_pics/Nachos.jpg', 'img/New_hummingbird_food_pics/breakfast_hash.jpg'],
+        "specialty-burgers": ['img/New_hummingbird_food_pics/wrap.jpg', 'img/New_hummingbird_food_pics/eggs_benedict.jpg', 'img/New_hummingbird_food_pics/chicken_tenders.jpg'],
+        "hand-helds": ['img/New_hummingbird_food_pics/wrap.jpg', 'img/New_hummingbird_food_pics/eggs_benedict.jpg', 'img/New_hummingbird_food_pics/chicken_tenders.jpg'],
+    }
+
+    // Function to create image grid for a section
+    function createImageGrid(sectionId) {
+        const grid = document.createElement('div');
+        grid.className = 'menu-grid';
+        grid.id = `${sectionId}-grid`;
+
+        // Create three grid items
+        for (let i = 0; i < 3; i++) {
+            const gridItem = document.createElement('div');
+            gridItem.className = 'grid-item';
             
-            // Add active class to clicked button
-            button.classList.add('active');
-            
-            // Show the corresponding menu section
-            const sectionId = button.getAttribute('data-section');
-            const targetSection = document.getElementById(sectionId);
-            if (targetSection) {
-                targetSection.classList.add('active');
+            // Alternate layouts based on section
+            switch(sectionId) {
+                case 'starters':
+                case 'pub-grub':
+                case 'specialty-burgers':
+                    // Layout 1: Large first image, two smaller images below
+                    if (i === 0) {
+                        gridItem.classList.add('large');
+                    }
+                    break;
+                case 'soups-and-salads':
+                case 'pan-pizza':
+                case 'hand-helds':
+                    // Layout 2: Two smaller images on top, large image below
+                    if (i === 2) {
+                        gridItem.classList.add('large');
+                    }
+                    break;
             }
+
+            const img = document.createElement('img');
+            img.src = menuImgs[sectionId][i];
+            img.alt = `Menu item ${i + 1}`;
+
+            gridItem.appendChild(img);
+            grid.appendChild(gridItem);
+        }
+
+        return grid;
+    }
+
+    // Function to handle menu section switching
+    function switchMenuSection(sectionId) {
+        // Update menu sections
+        menuSections.forEach(section => {
+            section.classList.remove('active');
+            if (section.id === sectionId) {
+                section.classList.add('active');
+            }
+        });
+
+        // Update menu grids
+        const existingGrid = document.querySelector('.menu-grid.active');
+        if (existingGrid) {
+            existingGrid.classList.remove('active');
+        }
+
+        let newGrid = document.getElementById(`${sectionId}-grid`);
+        if (!newGrid) {
+            newGrid = createImageGrid(sectionId);
+            gridWrapper.appendChild(newGrid);
+        }
+        newGrid.classList.add('active');
+
+        // Update active states for both desktop and mobile buttons
+        menuBtns.forEach(btn => {
+            btn.classList.remove('active');
+            if (btn.getAttribute('data-section') === sectionId) {
+                btn.classList.add('active');
+            }
+        });
+
+        mobileMenuBtns.forEach(btn => {
+            btn.classList.remove('active');
+            if (btn.getAttribute('data-target') === sectionId) {
+                btn.classList.add('active');
+            }
+        });
+    }
+
+    // Desktop menu button click handlers
+    menuBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const sectionId = btn.getAttribute('data-section');
+            switchMenuSection(sectionId);
         });
     });
 
-    // Grid transition effect
-    const grids = document.querySelectorAll('.menu-grid');
-    let currentGrid = 0;
+    // Mobile menu button click handlers
+    mobileMenuBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const sectionId = btn.getAttribute('data-target');
+            switchMenuSection(sectionId);
+            mobileMenu.classList.remove('active');
+            mobileMenuIcon.classList.remove('rotated');
+        });
+    });
 
-    // Only run grid switching on menu page
-    if (grids.length > 0) {
-        function switchGrid() {
-            grids[currentGrid].classList.remove('active');
-            currentGrid = (currentGrid + 1) % grids.length;
-            grids[currentGrid].classList.add('active');
-        }
-
-        // Switch grids every 5 seconds
-        setInterval(switchGrid, 5000);
+    // Initialize with the first section active
+    if (menuSections.length > 0) {
+        switchMenuSection(menuSections[0].id);
     }
 
     // Initialize Swiper only if it exists

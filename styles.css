@@ -564,20 +564,16 @@ footer {
     opacity: 0;
     transition: opacity 1s ease;
     pointer-events: none;
-}
-
-.menu-grid.active {
-    opacity: 1;
-    pointer-events: auto;
-}
-
-.menu-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-auto-rows: minmax(100px, 1fr);
     gap: 0.5rem;
     grid-auto-flow: dense;
-    height: 100%;
+}
+
+.menu-grid.active {
+    opacity: 1;
+    pointer-events: auto;
 }
 
 .grid-item {
@@ -587,28 +583,15 @@ footer {
     grid-row: span 1.2;
 }
 
-.grid-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
 .grid-item.large {
     grid-column: span 2;
     grid-row: span 1.5;
 }
 
-.grid-item.tall {
-    grid-row: span 2;
-}
-
-.grid-item.wide {
-    grid-column: 1 / -1;
-}
-
-.grid-item.medium {
-    grid-column: span 1.5;
-    grid-row: span 1.5;
+.grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .menu-nav {
@@ -944,15 +927,10 @@ footer {
     }
 
     .mobile-menu-icon {
-        display: block !important;
-        width: 30px;
-        height: 30px;
-        position: absolute;
         top: 120px;
-        left: 85px;
-        z-index: 1001;
-        cursor: pointer;
-        transition: transform 0.3s ease;
+        width: 55px;
+        height: 55px;
+        left: 55px;
     }
 
     .mobile-menu-icon.rotated {
@@ -1220,11 +1198,11 @@ footer {
 
     .mobile-menu-icon {
         display: block !important;
-        width: 30px;
-        height: 30px;
+        width: 35px;
+        height: 35px;
         position: absolute;
         top: 120px;
-        left: 85px;
+        left: 70px;
         z-index: 1001;
         cursor: pointer;
         transition: transform 0.3s ease;
@@ -1243,11 +1221,48 @@ footer {
         border-top: 1px solid rgba(255, 255, 255, 0.2);
         padding-top: 1.5rem;
     }
+
+    .menu-section {
+        display: block;
+        padding: 0;
+    }
+
+    .menu-item {
+        padding: 1rem 0;
+    }
+
+    .menu-sections {
+        height: calc(100% - 80px);
+        padding-bottom: 2rem;
+    }
+
+    .menu-images {
+        position: absolute;
+        bottom: 15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        padding: 0;
+        height: 100px;
+        margin-top: 0;
+    }
+
+    .menu-image {
+        width: 48%;
+        height: 100px;
+        object-fit: contain;
+        border-radius: 4px;
+    }
 }
 
 @media screen and (min-width: 481px) and (max-width: 800px) {
     .mobile-menu-icon {
-        top: 135px;
+        top: 170px;
+        width: 55px;
+        height: 55px;
     }
 
     .mobile-menu {
@@ -1406,7 +1421,7 @@ footer {
     }
 }
 
-@media screen and (min-width: 1151px) {
+@media screen and (min-width: 801px) {
     .menu-section {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -1437,12 +1452,78 @@ footer {
     }
 }
 
-@media screen and (max-width: 1150px) {
-    .menu-grid-container {
-        display: none;
+@media screen and (max-width: 800px) {
+    .menu-section {
+        display: block;
+        padding: 0;
     }
 
-    .menu-content {
-        width: 100%;
+    .menu-item {
+        padding: 1rem 0;
+    }
+
+    .menu-sections {
+        height: calc(100% - 150px);
+    }
+
+    .menu-container {
+        padding-top: 1.5rem;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        padding-bottom: 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .menu-grid-container {
+        padding: 1rem;
+    }
+    
+    .menu-grid {
+        gap: 0.5rem;
+    }
+}
+
+@media screen and (min-width: 481px) and (max-width: 1150px) {
+    .menu-container {
+        padding-top: 1.5rem;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        padding-bottom: 0;
+    }
+
+}
+
+@media screen and (max-width: 480px) {
+    .menu-container {
+        padding: 1rem;
+    }
+
+    .mobile-menu-icon {
+        top: 120px;
+        width: 55px;
+        height: 55px;
+        left: 55px;
+    }
+}
+
+@media screen and (min-width: 801px) and (max-width: 1400px) {
+    .menu-nav-links {
+        gap: 1.5rem;
+    }
+
+    .menu-btn {
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .menu-section {
+        display: block;
+        padding: 0;
+    }
+
+    .menu-item {
+        padding: 1rem 0;
     }
 }
