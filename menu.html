@@ -38,11 +38,12 @@
             <div class="menu-container">
                 <nav class="menu-nav">
                     <ul class="menu-nav-links">
-                        <li><button class="menu-btn">Starters</button></li>
-                        <li><button class="menu-btn">Soups and Salads</button></li>
-                        <li><button class="menu-btn">Pub Grub</button></li>
-                        <li><button class="menu-btn">Pan Pizza</button></li>
-                        <li><button class="menu-btn">Hand Helds</button></li>
+                        <li><button class="menu-btn" data-section="starters">Starters</button></li>
+                        <li><button class="menu-btn" data-section="soups-and-salads">Soups and Salads</button></li>
+                        <li><button class="menu-btn" data-section="pub-grub">Pub Grub</button></li>
+                        <li><button class="menu-btn" data-section="pan-pizza">Pan Pizza</button></li>
+                        <li><button class="menu-btn" data-section="specialty-burgers">Specialty Burgers</button></li>
+                        <li><button class="menu-btn" data-section="hand-helds">Hand Helds</button></li>
                     </ul>
                 </nav>
                 <div class="menu-sections">
@@ -355,6 +356,57 @@
                             </div>
                         </div>
                     </div>
+                    <div class="menu-section" id="specialty-burgers">
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <p class="item-name">Island Hopper</p>
+                                <p class="item-description">A juicy all-beef patty with carmelized onions, mushrooms, jalapenos, chipotle mayo, lettuce, tomato, pickle, and mozzarella cheese on a brioche bun</p>
+                            </div>
+                            <div class="price-container">
+                                <p class="item-price">$23</p>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <p class="item-name">Flamethrower</p>
+                                <p class="item-description">All-beef patty with bacon, jalapenos, chipotle mayo, Frank's Red Hot sauce, lettuce, tomato, pickle, cheddar cheese and onion rings on a brioche bun</p>
+                            </div>
+                            <div class="price-container">
+                                <p class="item-price">$23</p>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <p class="item-name">Maple Bacon</p>
+                                <p class="item-description">All-beef patty with maple bacon onion jam, cheddar cheese, chipotle mayo, lettuce, bacon, pickles and tomato on a brioche bun</p>
+                            </div>
+                            <div class="price-container">
+                                <p class="item-price">$23</p>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <p class="item-name">Hawaiian</p>
+                                <p class="item-description">All-beef patty with Teriyaki, ham, pineapple, lettuce, tomato, and mozzarella cheese on a brioche bun</p>
+                            </div>
+                            <div class="price-container">
+                                <p class="item-price">$23</p>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <p class="item-name">The Luke Burger</p>
+                                <p class="item-description">Two strips of crispy chicken tossed in hot sauce with bacon, cheddar, two onion rings, lettuce, tomato, and pickles</p>
+                            </div>
+                            <div class="price-container">
+                                <p class="item-price">$23</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-images">
+                    <img src="img/noun-hummingbird-7408265-980156.png" alt="Burger and fries" class="menu-image">
+                    <img src="img/noun-hummingbird-7408265-980156.png" alt="Burger and fries" class="menu-image menu-image-flipped">
                 </div>
             </div>
         </div>
@@ -393,6 +445,7 @@
             <li><button class="mobile-menu-btn" data-target="soups-and-salads">Soups and Salads</button></li>
             <li><button class="mobile-menu-btn" data-target="pub-grub">Pub Grub</button></li>
             <li><button class="mobile-menu-btn" data-target="pan-pizza">Pan Pizza</button></li>
+            <li><button class="mobile-menu-btn" data-target="specialty-burgers">Specialty Burgers</button></li>
             <li><button class="mobile-menu-btn" data-target="hand-helds">Hand Helds</button></li>
         </ul>
     </div>

@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         mobileMenuBtns.forEach(btn => {
             btn.classList.remove('active');
-            if (btn.getAttribute('data-section') === sectionId) {
+            if (btn.getAttribute('data-target') === sectionId) {
                 btn.classList.add('active');
             }
         });
@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Mobile menu button click handlers
     mobileMenuBtns.forEach(btn => {
         btn.addEventListener('click', () => {
-            const sectionId = btn.getAttribute('data-section');
+            const sectionId = btn.getAttribute('data-target');
             switchMenuSection(sectionId);
             mobileMenu.classList.remove('active');
             mobileMenuIcon.classList.remove('rotated');

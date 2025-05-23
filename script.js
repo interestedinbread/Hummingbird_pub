@@ -108,15 +108,21 @@ document.addEventListener('DOMContentLoaded', function() {
     const menuButtons = document.querySelectorAll('.menu-btn');
     const desktopMenuSections = document.querySelectorAll('.menu-section');
 
-    menuButtons.forEach((button, index) => {
+    menuButtons.forEach(button => {
         button.addEventListener('click', () => {
             // Remove active class from all sections and buttons
             desktopMenuSections.forEach(section => section.classList.remove('active'));
             menuButtons.forEach(btn => btn.classList.remove('active'));
             
-            // Add active class to clicked button and corresponding section
+            // Add active class to clicked button
             button.classList.add('active');
-            desktopMenuSections[index].classList.add('active');
+            
+            // Show the corresponding menu section
+            const sectionId = button.getAttribute('data-section');
+            const targetSection = document.getElementById(sectionId);
+            if (targetSection) {
+                targetSection.classList.add('active');
+            }
         });
     });
 

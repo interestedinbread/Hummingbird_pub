@@ -261,7 +261,7 @@ body.menu-page .hero-content {
     position: relative;
     z-index: 2;
     color: white;
-    height: 80vh;
+    height: 75vh;
     display: flex;
     align-items: center;
     margin-top: 60px;
@@ -270,9 +270,9 @@ body.menu-page .hero-content {
 .menu-container {
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: #f5f5f5;
     border-radius: 8px;
-    padding: 2rem;
+    padding-top: 1.5rem;
     overflow-y: auto;
     scrollbar-width: none;  /* Firefox */
     -ms-overflow-style: none;  /* IE and Edge */
@@ -613,7 +613,7 @@ footer {
 
 .menu-nav {
     margin-bottom: 2rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     padding-bottom: 1rem;
     width: 90%;
     margin-left: auto;
@@ -633,7 +633,7 @@ footer {
 .menu-btn {
     background: none;
     border: none;
-    color: white;
+    color: #333;
     font-family: 'Poppins', sans-serif;
     font-size: 1rem;
     cursor: pointer;
@@ -642,15 +642,39 @@ footer {
 }
 
 .menu-btn:hover {
-    color: #FFD1DC;
+    color: #980156;
+}
+
+.menu-btn.active {
+    color: #980156;
 }
 
 .menu-sections {
     position: relative;
     width: 100%;
-    height: calc(100% - 80px); /* Account for nav height */
+    height: calc(100% - 200px);
     padding-top: 60px;
     margin-top: 25px;
+}
+
+.menu-images {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0 2rem;
+    height: 100px;
+    margin-top: 0.5rem;
+}
+
+.menu-image {
+    width: 48%;
+    height: 100px;
+    object-fit: contain;
+    border-radius: 4px;
+}
+
+.menu-image-flipped {
+    transform: scaleX(-1);
 }
 
 .menu-section {
@@ -688,14 +712,14 @@ footer {
 #pan-pizza > p {
     text-align: left;
     font-style: italic;
-    color: rgba(255, 255, 255, 0.8);
+    color: #666;
     margin-bottom: 1.5rem;
 }
 
 #hand-helds > p {
     text-align: left;
     font-style: italic;
-    color: rgba(255, 255, 255, 0.8);
+    color: #666;
     margin-bottom: 1.5rem;
 }
 
@@ -718,15 +742,16 @@ footer {
 }
 
 .item-name {
-    color: white;
-    font-size: 1rem;
+    color: #333;
+    font-size: 1.1rem;
     font-weight: 500;
     margin: 0 0 0.3rem 0;
     text-align: left;
+    text-decoration: underline;
 }
 
 .item-description {
-    color: rgba(255, 255, 255, 0.8);
+    color: #666;
     font-size: 0.9rem;
     margin: 0;
     line-height: 1.4;
@@ -742,7 +767,7 @@ footer {
 }
 
 .item-price {
-    color: #FFD1DC;
+    color: #980156;
     font-size: 0.9rem;
     margin: 0;
     font-weight: 500;
@@ -844,14 +869,16 @@ footer {
     text-align: center;
     margin: 0 0 0.1rem 0;
     color: white;
+    width: 100%;
 }
 
 .bus-schedule-container .schedule-title + p {
     font-size: 1.1rem;
     line-height: 1.6;
     margin: 0 0 0.35rem 0;
-    text-align: left;
+    text-align: center;
     color: white;
+    width: 100%;
 }
 
 .schedule-table {
@@ -905,13 +932,11 @@ footer {
 
     .menu-content {
         width: 100%;
-        height: 90vh;
+        height: 85vh;
     }
 
     .menu-container {
-        margin-top: 15px;
-        height: 95%;
-        padding-bottom: 1rem;
+        padding: 1rem;
     }
 
     .menu-nav {
@@ -935,8 +960,7 @@ footer {
     }
 
     .menu-sections {
-        padding-top: 60px;
-        margin-top: 25px;
+        height: calc(100% - 200px);
     }
 
     .menu-section .menu-item:first-child {
@@ -1152,6 +1176,15 @@ footer {
     .info-section {
         padding: 2rem 1rem;
     }
+
+    .menu-images {
+        padding: 0 1rem;
+        height: 80px;
+    }
+    
+    .menu-image {
+        height: 80px;
+    }
 }
 
 /* Mobile menu icon - hidden by default */
@@ -1306,6 +1339,14 @@ footer {
     .menu-content {
         width: 100%;
     }
+
+    .menu-sections {
+        height: calc(100% - 200px);
+    }
+    
+    .menu-images {
+        padding: 0 1rem;
+    }
 }
 
 @media screen and (max-width: 1200px) {
@@ -1362,5 +1403,46 @@ footer {
 
     .pub-sign {
         max-height: 400px;
+    }
+}
+
+@media screen and (min-width: 1151px) {
+    .menu-section {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        padding: 0 2rem;
+    }
+
+    .menu-section > p {
+        grid-column: 1 / -1;
+        margin-bottom: 1rem;
+    }
+
+    .menu-item {
+        padding: 1rem;
+    }
+
+    #soups-and-salads,
+    #pan-pizza {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-auto-rows: min-content;
+        gap: 1rem;
+    }
+
+    #soups-and-salads > p,
+    #pan-pizza > p {
+        margin-bottom: 0.5rem;
+    }
+}
+
+@media screen and (max-width: 1150px) {
+    .menu-grid-container {
+        display: none;
+    }
+
+    .menu-content {
+        width: 100%;
     }
 }
