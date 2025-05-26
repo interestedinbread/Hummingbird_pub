@@ -1257,8 +1257,8 @@ footer {
         border-radius: 4px;
     }
 
-    .hero {
-        height: 120vh;
+    body.pub-bus-page .hero {
+        height: 125vh;
     }
 }
 
