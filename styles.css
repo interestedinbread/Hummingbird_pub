@@ -938,7 +938,7 @@ footer {
     }
 
     .menu-sections {
-        height: calc(100% - 200px);
+        height: calc(100% - 250px);
     }
 
     .menu-section .menu-item:first-child {
@@ -1463,7 +1463,8 @@ footer {
     }
 
     .menu-sections {
-        height: calc(100% - 150px);
+        height: calc(100% - 180px);
+        margin-top: 3rem;
     }
 
     .menu-container {
