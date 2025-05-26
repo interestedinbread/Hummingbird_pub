@@ -1256,6 +1256,10 @@ footer {
         object-fit: contain;
         border-radius: 4px;
     }
+
+    .hero {
+        height: 120vh;
+    }
 }
 
 @media screen and (min-width: 481px) and (max-width: 800px) {
